@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    height: 600px;
+    width: 600px;
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 255, .2);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 2%;
+}
+
+.slider {
+    background-color: gray;
+    border-radius: 5px;  
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.clear, .option, .opaque {
+    border: 1px solid black;
+    width: 100px;
+    height: 20px;
+    text-align: center;
+    padding: 4px 0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clear:hover, .option:hover, .opaque:hover {
+    color:white !important;
+    background-color: black !important;
+}
+
+.size {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
