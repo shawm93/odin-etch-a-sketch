@@ -25,22 +25,26 @@ const setupGrid = (slider) => {
     for (i=1; i<=size; i++) {
         const grid = document.createElement('div');
         grid.classList.add('grid');
-        grid.setAttribute('style', `width: ${grid_size}%; height: ${grid_size}%; margin: 0;`);
+        grid.setAttribute('style', `width: ${grid_size}%; height: ${grid_size}%;`);
+
+        // mousedown and mouseup to simulate the click & drag drawing function on the pad
         grid.addEventListener('mousedown', () => {
             drag = true;
         })
         grid.addEventListener('mouseup', () => {
             drag = false;
         })
+
+        // when mouse is being clicked and dragged, drawing appear; otherwise, drag only not gonna draw
         grid.addEventListener('mouseover', () => {
             if (drag == true) {
                 grid.style.setProperty('background-color', `${changeColor()}`);
-                // console.log(opaqueMode);
+
+                // opaque function
                 if (opaqueMode == false) {
                     grid.style.setProperty('opacity', `1`);
                 } else {
                     let value = parseFloat(grid.style.opacity);
-                    console.log(isNaN(value));
                     if (isNaN(value)) {
                         grid.style.setProperty('opacity', 0.1);
                     } else {
@@ -54,6 +58,7 @@ const setupGrid = (slider) => {
     }
 }
 
+// make full use of inner setting mode to adapt to manipulation on DOM
 options.forEach((option) => {
     option.addEventListener('click', () => {
         options.forEach((option) => {
@@ -104,16 +109,19 @@ const changeColor = () => {
     return colorPicked;
 }
 
+// responsive change on resolution when sliding the bar
 slider.addEventListener('mousemove', () => {
     resolution = slider.value;
     size_display.innerHTML = `${resolution} x ${resolution}`;
 })
 
+// setup new grids immediately once after the bar value is updated
 slider.addEventListener('change', () => {
     container.innerHTML = ``;
     setupGrid(slider);
 })
 
+// clear the grid
 clear.addEventListener('click', () => {
     container.innerHTML = ``;
     setupGrid(slider);
