@@ -5,7 +5,7 @@ body {
     align-items: center;
 }
 
-.container {
+body .container {
     height: 400px;
     width: 400px;
     border: 2px solid black;
