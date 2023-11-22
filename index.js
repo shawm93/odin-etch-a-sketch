@@ -63,9 +63,9 @@ options.forEach((option) => {
     option.addEventListener('click', () => {
         options.forEach((option) => {
             option.style.setProperty('background-color', `white`);
-            option.style.setProperty('color', `black`);
+            option.style.setProperty('color', `#5F6F52`);
         })
-        option.style.setProperty('background-color', `black`);
+        option.style.setProperty('background-color', `#5F6F52`);
         option.style.setProperty('color', `white`);
         if (option == options[2]) {
             colorMode = false;
@@ -85,12 +85,12 @@ options.forEach((option) => {
 
 opaque.addEventListener('click', () => {
     if (opaqueMode == false) {
-        opaque.style.setProperty('background-color', `black`);
+        opaque.style.setProperty('background-color', `#5F6F52`);
         opaque.style.setProperty('color', `white`);
         opaqueMode = true;
     } else {
         opaque.style.setProperty('background-color', `white`);
-        opaque.style.setProperty('color', `black`);
+        opaque.style.setProperty('color', `#5F6F52`);
         opaqueMode = false;
     }
 })
